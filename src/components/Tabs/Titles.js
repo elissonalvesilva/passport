@@ -22,7 +22,7 @@ export default function Titles({ items, setSelectedTab }) {
             setSelectedTab && setSelectedTab(index)
           }}
           className={
-            classNames('tab-title rounded-lg px-3 pt-1 mr-5', currentIndex === index ? 'bg-tab-active' : 'bg-tab-inactive' )
+            classNames('tab-title rounded-3xl px-4 py-1.5 mr-5', currentIndex === index ? 'bg-tab-active' : 'bg-tab-inactive' )
           }
         >
           {title}

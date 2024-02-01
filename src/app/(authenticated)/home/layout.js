@@ -1,39 +1,11 @@
 import '@/styles/globals.css'
 import Navbar from '@/components/Navbar'
 import classNames from 'classnames'
-import localFont from 'next/font/local'
+import { Inter } from 'next/font/google'
 import Banner from '@/components/Banner'
 import Footer from '@/components/Footer'
 
-const helvetica = localFont({
-  src: [
-    {
-      path: '../../../styles/fonts/HelveticaNeueUltraLight.otf',
-      weight: '100',
-    },
-    {
-      path: '../../../styles/fonts/HelveticaNeueLight.otf',
-      weight: '300'
-    },
-    {
-      path: '../../../styles/fonts/HelveticaNeueRoman.otf',
-      weight: '400'
-    },
-    {
-      path: '../../../styles/fonts/HelveticaNeueMedium.otf',
-      weight: '500'
-    },
-    {
-      path: '../../../styles/fonts/HelveticaNeueBold.otf',
-      weight: '700'
-    },
-    {
-      path: '../../../styles/fonts/HelveticaNeueHeavy.otf',
-      weight: '900'
-    }
-  ],
-  variable: '--font-family-sans',
-})
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Create Next App',
@@ -42,7 +14,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="default" suppressHydrationWarning={true} className={classNames(helvetica.variable, 'font-sans')}>
+    <html lang="en" data-theme="default" suppressHydrationWarning={true} className={classNames(inter.className)}>
       <body suppressHydrationWarning={true}>
         <Navbar/>
         <Banner/>

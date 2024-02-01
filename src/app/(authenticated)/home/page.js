@@ -6,10 +6,45 @@ export default function Home() {
   const events = [
     { 
       title: 'Escola Sabatina',
-      location: 'Igreja Ingleses',
-      date: '15/10/2021',
-      startTime: '08:45',
-      endTime: '10:45',
+      category: 'Distrito',
+      type: 'Escola Sabatina',
+      location: 'Igreja dos Ingleses',
+      date: new Date(),
+    },
+    { 
+      title: 'Dia Mundial do Jovem Adventista',
+      category: 'Distrito',
+      type: 'Escola Sabatina',
+      location: 'Igreja dos Ingleses',
+      date: new Date(),
+    },
+    { 
+      title: 'Dia Mundial do Jovem Adventista',
+      category: 'Distrito',
+      type: 'Escola Sabatina',
+      location: 'Igreja dos Ingleses',
+      date: new Date(),
+    },
+    { 
+      title: 'Dia Mundial do Jovem Adventista',
+      category: 'Distrito',
+      type: 'Escola Sabatina',
+      location: 'Igreja dos Ingleses',
+      date: new Date(),
+    },
+    { 
+      title: 'Dia Mundial do Jovem Adventista',
+      category: 'Distrito',
+      type: 'Escola Sabatina',
+      location: 'Igreja dos Ingleses',
+      date: new Date(),
+    },
+    { 
+      title: 'Dia Mundial do Jovem Adventista',
+      category: 'Distrito',
+      type: 'Escola Sabatina',
+      location: 'Igreja dos Ingleses',
+      date: new Date(),
     }
   ]
 
@@ -21,8 +56,9 @@ export default function Home() {
   return (
     <>
       <Tabs.Tab>
+        <h2 className="mt-5 mb-3 font-bold text-md">Categorias</h2>
         <Tabs.Titles items={tabs.map(({ id, title }) => ({ id, title }))} />
-        <h2 className="mt-5 mb-4 font-bold text-lg">Próximos Eventos</h2>
+        <h2 className="mt-8 mb-4 font-bold text-sm">Próximos Eventos</h2>
         <Tabs.Contents
           items={tabs.map(({ id, content }) => ({
             id,

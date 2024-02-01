@@ -6,14 +6,14 @@ export default function Footer() {
   return (
     <footer className="fixed bottom-0 bg-footer left-0 right-0 pb-4 px-16">
       <div className="flex justify-between">
-        <div className="text-xl pt-3 px-2 pb-1 footer-tab-active">
-          <IoHomeOutline />
+        <div className="flex flex-col pt-3 text-xl px-2 pb-1 footer-tab__active">
+          <IoHomeOutline className="mt-2 text-xl" />
         </div>
-        <div className="text-xl pt-3 px-2 pb-1 footer-tab-inactive">
-          <BsTicketPerforated className="text-xl" />
+        <div className="flex flex-col pt-3 text-xl px-2 pb-1 footer-tab__inactive">
+          <BsTicketPerforated className="mt-2 text-xl" />
         </div>
-        <div className="text-xl pt-3 px-2 pb-1 footer-tab-inactive">
-          <RiUser5Line className="text-xl" />
+        <div className="flex flex-col pt-3 text-xl px-2 pb-1 footer-tab__inactive">
+          <RiUser5Line className="mt-2 text-xl" />
         </div>
       </div>
     </footer>

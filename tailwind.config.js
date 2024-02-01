@@ -7,9 +7,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['var(--font-family-sans)'],
-      },
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
@@ -18,6 +15,7 @@ module.exports = {
         lightYellow: 'var(--color-light-yellow)',
         typography: 'var(--color-typography-white)',
         'typography-black': 'var(--color-typography-black)',
+        'typography-gray': 'var(--color-typography-gray)',
         // Tabs
         'bg-tab-active': 'var(--color-bg-tab-active)',
         'bg-tab-inactive': 'var(--color-bg-tab-inactive)',
@@ -30,5 +28,7 @@ module.exports = {
       }
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }
