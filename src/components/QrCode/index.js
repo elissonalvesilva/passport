@@ -1,7 +1,5 @@
 import { BsTicketPerforated } from "react-icons/bs";
-import Image from "next/image"
 import {QRCodeSVG} from 'qrcode.react';
-import logoJovem from '@/assets/images/logo_jovem.png'
 
 export default function QrCode({ payload, event, user }) {
   const options = { month: 'short', day: 'numeric' };
@@ -37,7 +35,7 @@ export default function QrCode({ payload, event, user }) {
               <div className="receipt qr-code  flex justify-between">
                   <QRCodeSVG className="qr" value={JSON.stringify(payload)} />
                   <div className="description">
-                    <Image className="float-right" src={logoJovem} alt="Logo Jovem" />
+                    <BsTicketPerforated className="text-primary text-4xl skew-y-12" />
                   </div>
               </div>
             </div>

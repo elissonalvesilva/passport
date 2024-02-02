@@ -80,7 +80,7 @@ export default function Home() {
 
   const tabs = [
     {id: 'tab_district', title: 'Distrito', content: <Events eventsData={events} handleGenerateQRCode={handleGenerateQRCode} />},
-    {id: 'tab_local', title: 'Igreja Local', content: <div>Igreja Local</div>},
+    {id: 'tab_local', title: 'Igreja Local', content: <Events eventsData={events} handleGenerateQRCode={handleGenerateQRCode} />},
   ]
 
   return (

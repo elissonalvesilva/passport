@@ -9,6 +9,8 @@
   @import "components/footer.css";
   @import "components/events.css";
   @import "components/qrcode.css";
+  @import "components/input.css";
+  
   * {
     box-sizing: border-box;
   }
@@ -37,7 +39,6 @@ body {
 
 .divider {
   border-color: var(--color-divider-border);
-  /* border-width: 0.1px; */
   border-radius: 8px;
-  margin-top: 20px;
+  margin: 20px 0;
 }

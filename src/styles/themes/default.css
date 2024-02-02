@@ -32,4 +32,8 @@ html[data-theme="default"] {
   /* QR CODE */
   --color-qr-code-printer: #F68142;
   --color-qr-code-line: #F68142;
+
+  /* INPUT */
+  --color-input-focus-border: #F68142;
+  --color-input-focus-shadow: #F68142;
 }

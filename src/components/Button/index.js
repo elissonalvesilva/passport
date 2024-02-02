@@ -1,9 +1,9 @@
 import classNames from "classnames";
 
-export default function Button({ onClick, children, className = '' }) {
+export default function Button({ onClick, children, className = '', type = 'button'}) {
 return (
     <button
-      type='button'
+      type={type}
       onClick={onClick}
       className={classNames('w-full py-2 px-4 rounded-3xl', className)}
     >

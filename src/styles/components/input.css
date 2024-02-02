@@ -1,0 +1,4 @@
+.input:focus {
+  border-color: var(--color-input-focus-border);
+  box-shadow: var(--color-input-focus-border), 0 1px 2px 0 var(--color-input-focus-border), 0, 1px 2px 0 var(--color-input-focus-border);
+}
