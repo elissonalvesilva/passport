@@ -4,6 +4,11 @@
 
 @layer base {
   @import "themes/default.css";
+  @import "components/modal.css";
+  @import "components/tabs.css";
+  @import "components/footer.css";
+  @import "components/events.css";
+  @import "components/qrcode.css";
   * {
     box-sizing: border-box;
   }
@@ -28,4 +33,11 @@ body {
 
 .content {
   padding: 30px 20px;
+}
+
+.divider {
+  border-color: var(--color-divider-border);
+  /* border-width: 0.1px; */
+  border-radius: 8px;
+  margin-top: 20px;
 }

@@ -1,0 +1,10 @@
+.bg-tab-active {
+  background-color: var(--color-bg-tab-active);
+  border: 1px solid var(--color-tab-border-active);
+  color: var(--color-typography-white);
+}
+
+.bg-tab-inactive {
+  background-color: var(--color-bg-tab-inactive);
+  border: 1px solid var(--color-tab-border-inactive);
+}

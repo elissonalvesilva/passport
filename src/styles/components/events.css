@@ -1,0 +1,18 @@
+
+.event--item {
+
+}
+
+.event--item__image {
+  overflow: hidden;
+}
+
+.event--item__image img {
+}
+
+.event--item__data {}
+
+.item--data__type {
+  color: var(--color-primary);
+  font-size: 0.70rem;
+}

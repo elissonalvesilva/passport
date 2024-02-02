@@ -1,0 +1,28 @@
+.bg-footer {
+  background-color: var(--color-bg-footer);
+  overflow: hidden;
+  -webkit-box-shadow: 0px -1.5px 65px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px -1.5px 65px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px -1.5px 65px 0px rgba(0,0,0,0.3);
+}
+
+.footer-tab__active {
+  color: var(--color-footer-tab-active);
+  position: relative;
+}
+
+.footer-tab__active::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 30%;
+  transform: translate(-20%, -30%);
+  width: 25px;
+  height: 25px;
+  background-color: var(--color-bg-tab-active);
+  border-radius: 50%;
+}
+
+.footer-tab__inactive {
+  color: var(--color-footer-tab-inactive);
+}

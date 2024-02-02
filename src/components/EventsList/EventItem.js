@@ -32,8 +32,8 @@ export default function EventItem({ event, onClick }) {
             <span className="text-xs text-primary">{eventDate}</span>
           </div>
         </div>
-        <button className="w-10 h-full flex items-center justify-center" onClick={onClick}>
-          <p className="text-primary text-lg">
+        <button className="w-10 h-full flex items-center justify-center" onClick={() => onClick(event._id)}>
+          <p className="text-primary text-2xl">
             <MdQrCodeScanner />
           </p>
         </button>
