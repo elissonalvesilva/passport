@@ -17,8 +17,6 @@ export default function SignUp() {
     formState: { errors },
   } = createHolderForm;
 
-  console.log(errors);
-
   const createHolder = (data) => {
     console.log(data);
   }
@@ -27,7 +25,7 @@ export default function SignUp() {
     <>
       <div className='flex flex-col'>
         <div className='flex flex-col justify-center items-center py-8 px-5'>
-          <h1 className='font-medium text-2xl text-typography-black'>Crie a conta</h1>
+          <h1 className='font-medium text-2xl text-typography-black'>Crie sua conta</h1>
           <span className='text-typography-gray text-xs mt-2'>Informe corretamente os dados abaixo</span>
         </div>
         <FormProvider {...createHolderForm}>
@@ -54,7 +52,7 @@ export default function SignUp() {
             </Form.Field>
             <Form.Field>
               <Form.Label htmlFor='password'>Senha</Form.Label>
-              <Form.Input id="password" name="password" type="text" />
+              <Form.Input id="password" name="password" type="password" />
               <Form.ErrorMessage field="password"/>
             </Form.Field>
             <Form.Field>
