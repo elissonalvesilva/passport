@@ -10,6 +10,7 @@ import { Form } from '@/components/Forms';
 import Button from '@/components/Button';
 import Dialog from '@/components/Dialog';
 import { useDialog } from '@/components/Dialog/Context';
+import { Config } from '@/config';
 
 export default function SignUp() {
   const router = useRouter()
@@ -37,7 +38,7 @@ export default function SignUp() {
   }, [dialogState]);
 
   const createHolder = (data) => {
-    fetch('http://localhost:8085/holders', {
+    fetch(`${Config.API_URL}/holders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

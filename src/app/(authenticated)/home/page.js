@@ -9,6 +9,7 @@ import Button from "@/components/Button";
 import QrCode from "@/components/QrCode";
 import { useAuth } from "@/lib/contexts/AuthContext";
 import { useRouter } from 'next/navigation';
+import { Config } from "@/config";
 
 export default function Home() {
   const router = useRouter();
@@ -27,7 +28,7 @@ export default function Home() {
 
   useEffect(() => {
     const category = selectedTab === 0 ? 'district' : 'local';
-    fetch(`http://localhost:8085/events/category/${category}`)
+    fetch(`${Config.API_URL}/events/category/${category}`)
       .then((res) => res.json())
       .then((data) => setEvents(data?.data))
       .catch((err) => console.log(err))

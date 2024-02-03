@@ -11,6 +11,7 @@ import Button from '@/components/Button';
 import { useDialog } from '@/components/Dialog/Context';
 import Dialog from '@/components/Dialog';
 import { useAuth } from '@/lib/contexts/AuthContext';
+import { Config } from '@/config';
 
 export default function Login() {
   const router = useRouter();
@@ -35,7 +36,7 @@ export default function Login() {
 
   const createHolder = async (data) => {
     try {
-      const response = await fetch('http://localhost:8085/holders/auth', {
+      const response = await fetch(`${Config.API_URL}/holders/auth`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
