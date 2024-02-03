@@ -7,20 +7,15 @@ import { Tabs } from "@/components/Tabs";
 import { useModal } from "@/components/Modal/ModalContext";
 import Button from "@/components/Button";
 import QrCode from "@/components/QrCode";
+import { useAuth } from "@/lib/contexts/AuthContext";
 
 export default function Home() {
   const { openModal, isModalOpen } = useModal();
+  const { user } = useAuth();
   const [payload, setPayload] = useState({});
   const [events, setEvents] = useState([]);
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedEvent, setSelectedEvent] = useState({});
-  
-
-  const user = {
-    id: "123asd",
-    name: "Elisson",
-    lastName: "Silva",
-  }
 
   useEffect(() => {
     const category = selectedTab === 0 ? 'district' : 'local';

@@ -1,5 +1,7 @@
-import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
+import '@/styles/globals.css'
+import { DialogProvider } from '@/components/Dialog/Context';
+import { AuthProvider } from '@/lib/contexts/AuthContext';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -18,7 +20,11 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="default" suppressHydrationWarning={true} className={inter.className}>
-      <body suppressHydrationWarning={true} className='h-screen w-screen'>{children}</body>
+      <AuthProvider>
+        <DialogProvider>
+          <body suppressHydrationWarning={true} className='h-screen w-screen'>{children}</body>
+          </DialogProvider>
+         </AuthProvider>
     </html>
   )
 }

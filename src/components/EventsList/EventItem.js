@@ -2,8 +2,6 @@ import Image from "next/image"
 import { TiLocation } from "react-icons/ti";
 import { MdQrCodeScanner } from "react-icons/md";
 
-import example from '@/assets/images/example.png'
-
 export default function EventItem({ event, onClick }) {
   const options = { month: 'short', day: 'numeric' };
   const dateFormatter = new Intl.DateTimeFormat('pt-BR', options);
@@ -20,6 +18,7 @@ export default function EventItem({ event, onClick }) {
             className="rounded-md w-full h-full object-cover"
             src={image}
             alt='event image'
+            priority
           />
         </div>
         <div className="flex flex-1 flex-col event--item__data px-3 grow">

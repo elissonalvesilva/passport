@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import Banner from '@/components/Banner'
 import Footer from '@/components/Footer'
 import { ModalProvider } from '@/components/Modal/ModalContext'
+import { AuthProvider } from '@/lib/contexts/AuthContext'
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,15 +23,17 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <ModalProvider>
-      <html lang="en" data-theme="default" suppressHydrationWarning={true} className={classNames(inter.className)}>
-        <body suppressHydrationWarning={true}>
-          <Navbar/>
-          <Banner/>
-          {children}
-          <Footer />
-        </body>
-      </html>
-    </ModalProvider>
+    <html lang="en" data-theme="default" suppressHydrationWarning={true} className={classNames(inter.className)}>
+      <AuthProvider>
+        <ModalProvider>
+          <body suppressHydrationWarning={true}>
+            <Navbar/>
+            <Banner/>
+            {children}
+            <Footer />
+          </body>
+          </ModalProvider>
+        </AuthProvider>
+    </html>
   )
 }

@@ -21,7 +21,11 @@ export default function QrCode({ payload, event, user }) {
                 <div className="details">
                   <div className="item">
                     <span>Nome</span>
-                    <h3>{user.name}</h3>
+                    <h3>{user.first_name}</h3>
+                  </div>
+                  <div className="item">
+                    <span>Sobrenome</span>
+                    <h3>{user.last_name}</h3>
                   </div>
                   <div className="item">
                     <span>Evento</span>
