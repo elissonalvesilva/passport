@@ -8,14 +8,22 @@ import { useModal } from "@/components/Modal/ModalContext";
 import Button from "@/components/Button";
 import QrCode from "@/components/QrCode";
 import { useAuth } from "@/lib/contexts/AuthContext";
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
   const { openModal, isModalOpen } = useModal();
-  const { user } = useAuth();
+  const { user, token } = useAuth();
   const [payload, setPayload] = useState({});
   const [events, setEvents] = useState([]);
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedEvent, setSelectedEvent] = useState({});
+
+  useEffect(() => {
+    if (!token) {
+      router.push('/login');
+    }
+  })
 
   useEffect(() => {
     const category = selectedTab === 0 ? 'district' : 'local';

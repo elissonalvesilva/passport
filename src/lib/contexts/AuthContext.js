@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
   const [token, setToken] = useState(Cookies.get('token') || null);
 
@@ -13,6 +14,7 @@ export const AuthProvider = ({ children }) => {
     const storedUser = Cookies.get('user');
     if (storedUser) {
       setUser(JSON.parse(storedUser));
+      setIsAuthenticated(true);
     }
   }, []);
 
@@ -22,6 +24,7 @@ export const AuthProvider = ({ children }) => {
 
     Cookies.set('token', authToken, { expires: 1/3 });
     Cookies.set('user', JSON.stringify(userData), { expires: 1/3 });
+    setIsAuthenticated(true);
   };
 
   const logout = () => {
@@ -30,6 +33,7 @@ export const AuthProvider = ({ children }) => {
 
     Cookies.remove('token');
     Cookies.remove('user');
+    setIsAuthenticated(false);
   };
 
   return (
