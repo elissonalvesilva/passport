@@ -5,7 +5,8 @@ export default function QrCode({ payload, event, user }) {
   const options = { month: 'short', day: 'numeric' };
   const dateFormatter = new Intl.DateTimeFormat('pt-BR', options);
 
-  const eventDate = dateFormatter.format(event.date);
+  const newDate = new Date(event.date);
+  const eventDate = dateFormatter.format(newDate);
 
   return (
     <div className="event-qrcode rounded-lg flex flex-col p-6">
