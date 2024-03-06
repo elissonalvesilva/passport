@@ -1,22 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
+import { useModal } from "@/components/Modal/ModalContext";
+import { useAuth } from "@/lib/contexts/AuthContext";
 import Events from "@/components/EventsList";
 import { Modal } from "@/components/Modal";
 import { Tabs } from "@/components/Tabs";
-import { useModal } from "@/components/Modal/ModalContext";
 import Button from "@/components/Button";
-import QrCode from "@/components/QrCode";
-import { useAuth } from "@/lib/contexts/AuthContext";
-import { useRouter } from 'next/navigation';
-import { Config } from "@/config";
+import QrCode from "@/components/QrCodeEvent";
+
+import useEventData from "@/lib/hooks/useEvents";
 
 export default function Home() {
   const router = useRouter();
   const { openModal, isModalOpen } = useModal();
   const { user, token } = useAuth();
   const [payload, setPayload] = useState({});
-  const [events, setEvents] = useState([]);
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedEvent, setSelectedEvent] = useState({});
 
@@ -26,13 +26,7 @@ export default function Home() {
     }
   })
 
-  useEffect(() => {
-    const category = selectedTab === 0 ? 'district' : 'local';
-    fetch(`${Config.API_URL}/events/category/${category}`)
-      .then((res) => res.json())
-      .then((data) => setEvents(data?.data))
-      .catch((err) => console.log(err))
-  }, [selectedTab])
+  const { events } = useEventData(selectedTab, token);
 
   const handleGenerateQRCode = (event) => {
     openModal(true);

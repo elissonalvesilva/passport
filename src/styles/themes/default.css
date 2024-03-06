@@ -36,4 +36,7 @@ html[data-theme="default"] {
   /* INPUT */
   --color-input-focus-border: #F68142;
   --color-input-focus-shadow: #F68142;
+
+  /* EVENTS */
+  --color-background-events-approved: rgba(255, 255, 255, 0.6);
 }

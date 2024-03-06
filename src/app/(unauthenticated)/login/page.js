@@ -36,7 +36,7 @@ export default function Login() {
 
   const createHolder = async (data) => {
     try {
-      const response = await fetch(`${Config.API_URL}/holders/auth`, {
+      const response = await fetch(`${Config.API_URL}/auth`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

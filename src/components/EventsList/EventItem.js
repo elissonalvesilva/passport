@@ -1,6 +1,9 @@
 import Image from "next/image"
 import { TiLocation } from "react-icons/ti";
 import { MdQrCodeScanner } from "react-icons/md";
+import classNames from "classnames";
+
+import selo from "@/assets/images/selo.jpg"
 
 export default function EventItem({ event, onClick }) {
   const options = { month: 'short', day: 'numeric' };
@@ -12,7 +15,16 @@ export default function EventItem({ event, onClick }) {
 
   return (
     <>
-      <div className='w-full h-28 flex bg-white rounded-xl mb-8 items-center'>
+      <div className={classNames('w-full h-28 flex bg-white rounded-xl mb-8 items-center relative')}>
+        {
+          event?.already_approved ? (
+            <div className="flex justify-center items-center event--item__approved">
+              <div className="item--approved">
+                <Image className="item--approved__icon" src={selo} alt="selo" width={80} height={80} />
+              </div>  
+            </div>
+          ): <></>
+        }
         <div className="flex-none w-24 h-full event--item__image shrink-0">
           <Image
             className="rounded-md w-full h-full object-cover"

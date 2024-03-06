@@ -1,5 +1,5 @@
 import { BsTicketPerforated } from "react-icons/bs";
-import {QRCodeSVG} from 'qrcode.react';
+import { QRCodeSVG } from 'qrcode.react';
 
 export default function QrCode({ payload, event, user }) {
   const options = { month: 'short', day: 'numeric' };

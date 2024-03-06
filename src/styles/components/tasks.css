@@ -1,0 +1,21 @@
+.tasks {
+  @apply bg-white rounded-md mb-8 items-center relative;
+  border: 1px solid var(--color-divider-border);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.45);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.45);
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.45);
+  padding: 10px;
+}
+
+.tasks input[type="checkbox"] {
+  @apply appearance-none h-4 w-4 border border-primary rounded-md checked:bg-primary checked:border-transparent focus:outline-none focus:ring-2 focus:ring-primary justify-self-end;
+}
+
+.task-score-dialog {
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+}
+
+.score-dialog-title {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-divider-border);
+}

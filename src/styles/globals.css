@@ -10,6 +10,7 @@
   @import "components/events.css";
   @import "components/qrcode.css";
   @import "components/input.css";
+  @import "components/tasks.css";
   
   * {
     box-sizing: border-box;
