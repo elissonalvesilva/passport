@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = (userData, authToken) => {
-    setUser(userData.user);
+    setUser(userData);
     setToken(authToken);
 
     Cookies.set('token', authToken, { expires: 1/3 });

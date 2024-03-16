@@ -1,0 +1,26 @@
+.profile .profile-score {
+  @apply relative w-full h-40;
+  top: -80px;
+}
+
+.profile .profile-score .profile-score__content {
+  @apply bg-white w-full h-full relative shadow-2xl rounded-xl p-4;
+  border: 1px solid var(--color-border-score);
+}
+
+.profile .profile-score .profile-score__content .profile-score__content__image {
+  @apply absolute w-full h-20 flex justify-center;
+  top: -40px;
+  left: 0;
+}
+
+.profile .profile-score .profile-score__content .profile-score__content__image .image {
+  @apply bg-white h-20 w-20 rounded-full flex justify-center items-center;
+  -webkit-box-shadow: 2px 8px 20px 0px rgba(0,0,0,0.23);
+  -moz-box-shadow: 2px 8px 20px 0px rgba(0,0,0,0.23);
+  box-shadow: 2px 8px 20px 0px rgba(0,0,0,0.23);
+}
+
+.profile .profile-score .profile-score__content .profile-score__content__image .image img {
+  @apply mix-blend-multiply;
+}

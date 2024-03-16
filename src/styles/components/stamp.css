@@ -1,0 +1,25 @@
+.next-stamps {
+  @apply w-full relative;
+  top: -50px;
+}
+
+.stamp-list {
+  @apply mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-14 gap-y-8;
+}
+
+.stamp-list .stamp-item {
+  @apply px-2 py-2 w-32 h-40 rounded-lg flex items-center relative bg-white;
+  -webkit-box-shadow: 2px 8px 20px 0px rgba(0,0,0,0.23);
+  -moz-box-shadow: 2px 8px 20px 0px rgba(0,0,0,0.23);
+  box-shadow: 2px 8px 20px 0px rgba(0,0,0,0.23);
+  border: 1px solid var(--color-primary);
+}
+
+.stamp-list .stamp-item .stamp-item__lock {
+  @apply absolute w-full h-full top-0 left-0 flex items-center justify-center rounded-lg;
+  background-color: rgba(0,0,0,0.33);
+}
+
+.stamp-list .stamp-item .stamp-item__lock img {
+  @apply w-16 h-16;
+}

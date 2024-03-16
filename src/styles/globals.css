@@ -11,6 +11,11 @@
   @import "components/qrcode.css";
   @import "components/input.css";
   @import "components/tasks.css";
+  @import "components/score.css";
+  @import "components/stamp.css";
+  @import "components/loading.css";
+
+  @import "pages/profile.css";
   
   * {
     box-sizing: border-box;
@@ -28,10 +33,8 @@
   }
 }
 
-
-
 body {
-  @apply bg-background p-6;
+  @apply bg-background;
 }
 
 .content {
@@ -42,4 +45,8 @@ body {
   border-color: var(--color-divider-border);
   border-radius: 8px;
   margin: 20px 0;
+}
+
+.profile-page {
+  background-color: var(--color-primary);
 }

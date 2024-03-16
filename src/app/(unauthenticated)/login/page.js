@@ -78,7 +78,7 @@ export default function Login() {
       }
       {
       }
-      <div className='w-full h-full flex flex-col justify-center px-2'>
+      <div className='w-full h-full flex flex-col justify-center px-6'>
         <div className='flex flex-col justify-center items-center py-8 px-5'>
           <h1 className='font-medium text-2xl text-typography-black'>Login</h1>
           <span className='text-typography-gray text-xs mt-2'>Oi! Bem-vindo de volta, você sentiu saudades.</span>

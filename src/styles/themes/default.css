@@ -39,4 +39,9 @@ html[data-theme="default"] {
 
   /* EVENTS */
   --color-background-events-approved: rgba(255, 255, 255, 0.6);
+
+
+  /* PAGES */
+  --color-border-score: #F68142;
+  --color-border-stamp: rgb(121, 121, 121, 0.4);
 }

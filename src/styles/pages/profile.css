@@ -1,0 +1,6 @@
+.profile {
+  @apply bg-white w-full min-h-full mt-24 pb-10 relative;
+  -webkit-box-shadow: -1px -1px 19px 0px rgba(0,0,0,0.41);
+  -moz-box-shadow: -1px -1px 19px 0px rgba(0,0,0,0.41);
+  box-shadow: -1px -1px 19px 0px rgba(0,0,0,0.41);
+}

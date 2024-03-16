@@ -1,8 +1,9 @@
 import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
+import classNames from 'classnames';
+import { ModalProvider } from '@/components/Modal/ModalContext'
+import { AuthProvider } from '@/lib/contexts/AuthContext'
 import { DialogProvider } from '@/components/Dialog/Context';
-import { AuthProvider } from '@/lib/contexts/AuthContext';
-
 
 const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
@@ -19,12 +20,14 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="default" suppressHydrationWarning={true} className={inter.className}>
+    <html lang="en" data-theme="default" suppressHydrationWarning={true} className={classNames(inter.className)}>
       <AuthProvider>
-        <DialogProvider>
-          <body suppressHydrationWarning={true} className='h-screen w-screen'>{children}</body>
+        <ModalProvider>
+          <DialogProvider>
+            <body suppressHydrationWarning={true} className='h-screen w-screen'>{children}</body>
           </DialogProvider>
-         </AuthProvider>
+        </ModalProvider>
+      </AuthProvider>
     </html>
   )
 }
