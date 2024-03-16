@@ -31,13 +31,13 @@ export default function Score ({ user, currentLevel, nextLevel, userScore = 0 })
                     <span className="text-xs">{userScore}</span>
                   </div>
                   <div className="missing-score">
-                    <span className="text-xs">{nextLevel?.score - userScore}</span>
+                    <span className="text-xs">{(nextLevel?.score || 0) - userScore}</span>
                   </div>
               </div>
               <div className="w-full bg-zinc-300 rounded-lg overflow-hidden">
                 <div
                     className={`h-4 bg-primary rounded-lg`}
-                    style={{ width: `${(userScore / nextLevel?.score) * 100}%` }}
+                    style={{ width: `${(userScore / (nextLevel?.score || 0)) * 100}%` }}
                   />
               </div>
             </div>

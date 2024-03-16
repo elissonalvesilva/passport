@@ -6,8 +6,9 @@ import { useAuth } from "@/lib/contexts/AuthContext";
 import useTasks from "@/lib/hooks/useTasks";
 import TaskList from "@/components/TaskList";
 import TaskScoreDialog from "@/components/TaskList/TaskScoreDialog";
+import withAuth from "@/lib/hoc/withAuth";
 
-export default function Tasks() {
+function Tasks() {
   const router = useRouter();
   const { user, token } = useAuth();
   const [selectedTasks, setSelectedTask] = useState({});
@@ -72,3 +73,5 @@ export default function Tasks() {
     </>
   )
 }
+
+export default withAuth(Tasks);

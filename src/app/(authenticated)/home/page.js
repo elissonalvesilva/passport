@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
 import { useModal } from "@/components/Modal/ModalContext";
 import { useAuth } from "@/lib/contexts/AuthContext";
 import Events from "@/components/EventsList";
@@ -11,20 +10,14 @@ import Button from "@/components/Button";
 import QrCode from "@/components/QrCodeEvent";
 
 import useEventData from "@/lib/hooks/useEvents";
+import withAuth from "@/lib/hoc/withAuth";
 
-export default function Home() {
-  const router = useRouter();
+function Home() {
   const { openModal, isModalOpen } = useModal();
   const { user, token } = useAuth();
   const [payload, setPayload] = useState({});
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedEvent, setSelectedEvent] = useState({});
-
-  useEffect(() => {
-    if (!token) {
-      router.push('/login');
-    }
-  })
 
   const { events } = useEventData(selectedTab, token);
 
@@ -75,3 +68,5 @@ export default function Home() {
     </>
   )
 }
+
+export default withAuth(Home);

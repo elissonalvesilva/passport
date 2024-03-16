@@ -10,7 +10,6 @@
   @apply w-screen h-screen fixed;
   background-color: var(--color-primary);
   z-index: 1010;
-  opacity: .9;
 }
 
 .loading .loading-image {

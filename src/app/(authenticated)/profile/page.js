@@ -1,6 +1,5 @@
 "use client";
 
-import { Suspense } from 'react';
 import { useState, useEffect } from "react";
 import Loading from '@/components/Loading';
 import Score from "@/components/Score";
@@ -8,6 +7,7 @@ import Stamps from "@/components/Stamp";
 import { useAuth } from "@/lib/contexts/AuthContext";
 import { Levels } from "@/config/levels";
 import { getNextUserLevel } from "@/lib/helpers";
+import withAuth from "@/lib/hoc/withAuth";
 
 function Component({ user }) {
   const [currentLevel, setCurrentLevel] = useState({});
@@ -18,10 +18,6 @@ function Component({ user }) {
     setNextLevel(getNextUserLevel(user.type));
   }, [user]);
 
-  if (!Object.keys(user).length) {
-    return <Loading />;
-  }
-
   return (
     <div className="profile px-6">
       <Score user={user} currentLevel={currentLevel} nextLevel={nextLevel} userScore={18000} />
@@ -30,14 +26,14 @@ function Component({ user }) {
   )
 }
 
-export default function Profile(){
+function Profile(){
   const { user } = useAuth();
 
   return (
     <>
-      <Suspense fallback={<Loading />}>
-        <Component user={user} />
-      </Suspense>
+      <Component user={user} />
     </>
   );
 }
+
+export default withAuth(Profile);
