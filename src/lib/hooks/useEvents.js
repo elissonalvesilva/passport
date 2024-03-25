@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import {Config} from '@/config';
+import { Config } from '@/config';
+import api from '@/lib/services/api';
 
 const useEventData = (selectedTab, token) => {
   const [events, setEvents] = useState([]);
@@ -10,13 +11,8 @@ const useEventData = (selectedTab, token) => {
 
     const fetchEvents = async () => {
       try {
-        const response = await fetch(`${Config.API_URL}/events/category/${category}`, {
-          headers: {
-            'x-passport-token': `Bearer ${token}`,
-          },
-        });
+        const { data } = await api.get(`/events/category/${category}`)
 
-        const data = await response.json();
         setEvents(data?.data || []);
       } catch (err) {
         console.error(err);
@@ -25,13 +21,7 @@ const useEventData = (selectedTab, token) => {
 
     const fetchApprovals = async () => {
       try {
-        const response = await fetch(`${Config.API_URL}/approvals`, {
-          headers: {
-            'x-passport-token': `Bearer ${token}`,
-          },
-        });
-
-        const data = await response.json();
+        const { data } = await api.get('/approvals');
         setEventsApprovals(data?.data || []);
       } catch (err) {
         console.error(err);

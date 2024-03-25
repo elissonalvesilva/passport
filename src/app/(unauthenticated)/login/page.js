@@ -4,6 +4,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 import { zodResolver } from '@hookform/resolvers/zod'
 import { schema } from './schema'
 import { Form } from '@/components/Forms';
@@ -34,19 +35,11 @@ export default function Login() {
     setTimeout(() => closeDialog(), 3000);
   }, [dialogState]);
 
-  const createHolder = async (data) => {
+  const createHolder = async (body) => {
     try {
-      const response = await fetch(`${Config.API_URL}/auth`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if(response.ok) {
-        const { data } = await response.json();
-        login(data?.user, data?.token);
+      const { data, status } = await axios.post(`${Config.API_URL}/auth`, body);
+      if(status >= 200 && status < 300) {
+        login(data?.data?.user, data?.data?.token, data?.data?.refresh_token);
         router.push('/home');
       }else {
         setDialogState({
@@ -57,6 +50,7 @@ export default function Login() {
       }
 
     }catch(error) {
+      console.log(error)
       setDialogState({
         type: 'error',
         message: 'Usuário e senha inválidos',
