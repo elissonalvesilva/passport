@@ -2,7 +2,7 @@ import axios from "axios";
 import { TokenService } from "./token";
 
 const instance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_PASSPORT_API_URL,
+  baseURL: process.env.PASSPORT_API_URL,
   headers: {
     "Content-Type": "application/json",
   },

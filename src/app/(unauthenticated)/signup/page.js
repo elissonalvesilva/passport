@@ -38,7 +38,8 @@ export default function SignUp() {
   }, [dialogState]);
 
   const createHolder = (data) => {
-    fetch(`${Config.API_URL}/holders`, {
+    console.log(process.env.PASSPORT_API_URL)
+    fetch(`${process.env.PASSPORT_API_URL}/holders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -80,7 +81,7 @@ export default function SignUp() {
           </Dialog>
         )
       }
-      <div className='flex flex-col'>
+      <div className='flex flex-col px-6'>
         <div className='flex flex-col justify-center items-center py-8 px-5'>
           <h1 className='font-medium text-2xl text-typography-black'>Crie sua conta</h1>
           <span className='text-typography-gray text-xs mt-2'>Informe corretamente os dados abaixo</span>

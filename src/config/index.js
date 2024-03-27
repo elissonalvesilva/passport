@@ -1,5 +1,5 @@
 export const Config = {
-  API_URL: process.env.NEXT_PUBLIC_PASSPORT_API_URL,
+  API_URL: process.env.PASSPORT_API_URL,
   ROUTES: {
     HOME: "/home",
     PROFILE: "/profile",
